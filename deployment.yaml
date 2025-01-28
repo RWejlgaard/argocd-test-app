@@ -1,0 +1,23 @@
+# This is a test deployment file for ArgoCD
+# deploys a deployment with a single replica of nginx
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+  labels:
+    app: test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test-app
+        image: nginx:1.21.3
+        ports:
+        - containerPort: 80
