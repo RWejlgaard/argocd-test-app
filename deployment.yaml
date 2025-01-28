@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: test-app
-        image: nginx:1.21.3
+        image: nginx:some-tag-that-doesnt-exist
         ports:
         - containerPort: 80
